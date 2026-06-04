@@ -49,6 +49,8 @@ The game sends telemetry to a single IP. Balancer receives it and fans it out to
 # Install dependencies
 pip install -r requirements.txt
 
+# Or use uv to install it!
+
 # Edit your device IPs
 cp config.example.yaml config.yaml
 
@@ -57,7 +59,3 @@ python -m racedash_balancer
 ```
 
 ---
-
-## License
-
-MIT

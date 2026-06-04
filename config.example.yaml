@@ -1,0 +1,9 @@
+listen_port: 20777
+
+destinations:
+  - name: iPad
+    ip: 192.168.1.100
+    port: 20777
+  - name: iPhone
+    ip: 192.168.1.101
+    port: 20777
