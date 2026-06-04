@@ -1,11 +1,14 @@
 import socket
 from collections.abc import Callable
 
+from .stats import Stats
+
 
 class UDPListener:
-    def __init__(self, port: int, on_packet: Callable[[bytes], None]) -> None:
+    def __init__(self, port: int, on_packet: Callable[[bytes], None], stats: Stats) -> None:
         self.port = port
         self.on_packet = on_packet
+        self.stats = stats
         self._sock: socket.socket | None = None
 
     def start(self) -> None:
@@ -15,6 +18,7 @@ class UDPListener:
 
         while True:
             data, _ = self._sock.recvfrom(65535)
+            self.stats.record_recv(len(data))
             self.on_packet(data)
 
     def close(self) -> None:
