@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+
+# Config local (contém IPs da sua rede — não commitar)
+config.yaml
+
+# Pytest
+.pytest_cache/
+
+# macOS
+.DS_Store
